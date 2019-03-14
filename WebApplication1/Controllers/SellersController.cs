@@ -113,7 +113,7 @@ namespace WebApplication1.Controllers
                 _sellerService.Update(seller);
                 return RedirectToAction(nameof(Index));
             }
-            catch (ApplicationException e)
+            catch (ApplicationException e) // upcasting 
             {
                 return RedirectToAction(nameof(Error), new { message = e.Message }); 
             }
